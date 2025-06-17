@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bnespoli <bnespoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/14 20:19:31 by bnespoli          #+#    #+#             */
-/*   Updated: 2025/06/16 18:51:42 by bnespoli         ###   ########.fr       */
+/*   Created: 2025/06/16 22:33:43 by bnespoli          #+#    #+#             */
+/*   Updated: 2025/06/16 23:24:09 by bnespoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
 #include <string>
 #include <iostream>
 
-class Contact {
+class Zombie {
 	private:
-		std::string _firstName;
-        std::string _lastName;
-        std::string _nickname;
-        std::string _phone;
-        std::string _darkestSecret;
-	
-	public:
-		Contact();
-		Contact(std::string firstName, std::string lastName, std::string nickname, std::string phone, std::string darkestSecret);
-		~Contact();
+		std::string _name;
 
-		void	showPreInfo();
-		void	displayInfo();
+	public:
+		Zombie();
+		~Zombie();
+		
+		void setName(std::string name);
+		void announce();
 };
+
+Zombie* zombieHorde(int N, std::string name);
 
 #endif

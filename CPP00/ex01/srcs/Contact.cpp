@@ -6,7 +6,7 @@
 /*   By: bnespoli <bnespoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 22:14:37 by bnespoli          #+#    #+#             */
-/*   Updated: 2025/06/14 22:57:24 by bnespoli         ###   ########.fr       */
+/*   Updated: 2025/06/16 18:51:30 by bnespoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,46 +24,6 @@ Contact::Contact(std::string firstName, std::string lastName, std::string nickna
 }
 
 Contact::~Contact(){}
-
-std::string Contact::getFirstName() const {
-    return (_firstName);
-}
-
-std::string Contact::getLastName() const {
-    return (_lastName);
-}
-
-std::string Contact::getNickname() const {
-    return (_nickname);
-}
-
-std::string Contact::getPhone() const {
-    return (_phone);
-}
-
-std::string Contact::getDarkestSecret() const {
-    return (_darkestSecret);
-}
-
-void Contact::setFirstName(std::string firstName) {
-    this->_firstName = firstName;
-}
-
-void Contact::setLastName(std::string lastName) {
-    this->_lastName = lastName;
-}
-
-void Contact::setNickname(std::string nickname) {
-    this->_nickname = nickname;
-}
-
-void Contact::setPhone(std::string phone) {
-    this->_phone = phone;
-}
-
-void Contact::setDarkestSecret(std::string darkestSecret) {
-    this->_darkestSecret = darkestSecret;
-}
 
 static void truncateInfo(std::string info) {
     int length = info.size();
