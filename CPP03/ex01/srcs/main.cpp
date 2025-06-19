@@ -11,21 +11,24 @@
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main() {
-    ClapTrap claptrap1("foo");
-    ClapTrap claptrap2("bar");
+    ClapTrap claptrap("foo");
+    ScavTrap scavtrap("bar");
+    ScavTrap scavtrap2("baz");
+    ScavTrap scavtrap3(scavtrap);
 
-    claptrap1.setAttackDamage(4);
-    claptrap2.setAttackDamage(10);  
+    claptrap.attack(scavtrap.getName());
+    scavtrap.takeDamage(claptrap.getAttackDamage());
 
-    claptrap1.attack(claptrap2.getName());
-    claptrap2.takeDamage(claptrap1.getAttackDamage());
-
-    claptrap2.beRepaired(5);
-    claptrap2.attack(claptrap1.getName());
-    claptrap1.takeDamage(claptrap2.getAttackDamage());
-    claptrap1.attack(claptrap2.getName());
+    scavtrap.beRepaired(5);
+    scavtrap.attack(claptrap.getName());
+    claptrap.takeDamage(scavtrap.getAttackDamage());
+    claptrap.attack(scavtrap.getName());
+    scavtrap.guardGate();
+    scavtrap2 = scavtrap;
+    scavtrap2.attack(scavtrap.getName());
 
     return 0;
 

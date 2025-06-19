@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME:=	ClapTrap
+NAME:=	scavtrap
 
 CC:=	c++
 
@@ -20,7 +20,8 @@ CPP_FLAGS	:=	$(INCLUDES) -Wall -Werror -Wextra -std=c++98
 
 SRC_FILES	+=	$(addprefix ./srcs/, \
 				main.cpp \
-				ClapTrap.cpp )
+				ClapTrap.cpp \
+				ScavTrap.cpp )
 				
 OBJS_DIR	:=	./objs/
 OBJS		:=	$(patsubst ./srcs/%.cpp, $(OBJS_DIR)%.o, $(SRC_FILES))

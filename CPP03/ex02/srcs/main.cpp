@@ -11,21 +11,24 @@
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main() {
-    ClapTrap claptrap1("foo");
-    ClapTrap claptrap2("bar");
+    ClapTrap claptrap("foo");
+    FragTrap fragtrap("bar");
+    FragTrap fragtrap2("taz");
 
-    claptrap1.setAttackDamage(4);
-    claptrap2.setAttackDamage(10);  
+    claptrap.attack(fragtrap.getName());
+    fragtrap.takeDamage(claptrap.getAttackDamage());
 
-    claptrap1.attack(claptrap2.getName());
-    claptrap2.takeDamage(claptrap1.getAttackDamage());
-
-    claptrap2.beRepaired(5);
-    claptrap2.attack(claptrap1.getName());
-    claptrap1.takeDamage(claptrap2.getAttackDamage());
-    claptrap1.attack(claptrap2.getName());
+    fragtrap.beRepaired(5);
+    fragtrap.attack(claptrap.getName());
+    claptrap.takeDamage(fragtrap.getAttackDamage());
+    claptrap.attack(fragtrap.getName());
+    fragtrap.highFivesGuys();
+    fragtrap2 = fragtrap;
+    fragtrap2.attack(fragtrap.getName());
 
     return 0;
 

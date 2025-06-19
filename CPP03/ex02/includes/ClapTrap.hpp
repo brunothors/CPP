@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef ClapTrap_HPP
+# define ClapTrap_HPP
 
 #include <iostream>
 #include <string>

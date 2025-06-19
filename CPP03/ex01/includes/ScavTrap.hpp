@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/19 07:29:20 by bnespoli          #+#    #+#             */
+/*   Created: 2025/06/19 20:14:29 by bnespoli          #+#    #+#             */
 /*   Updated: 2025/06/19 22:01:12 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
+
 #include "ClapTrap.hpp"
 
-int main() {
-    ClapTrap claptrap1("foo");
-    ClapTrap claptrap2("bar");
+class ScavTrap : public ClapTrap {
+    public:
+        ScavTrap();
+        ScavTrap(std::string const &name);
+        ScavTrap(ScavTrap const &src);
+        ~ScavTrap();
 
-    claptrap1.setAttackDamage(4);
-    claptrap2.setAttackDamage(10);  
+        ScavTrap &operator=(ScavTrap const &rhs);
 
-    claptrap1.attack(claptrap2.getName());
-    claptrap2.takeDamage(claptrap1.getAttackDamage());
+        void attack(std::string const &target);
+        void guardGate();
+};
 
-    claptrap2.beRepaired(5);
-    claptrap2.attack(claptrap1.getName());
-    claptrap1.takeDamage(claptrap2.getAttackDamage());
-    claptrap1.attack(claptrap2.getName());
-
-    return 0;
-
-}
+#endif
