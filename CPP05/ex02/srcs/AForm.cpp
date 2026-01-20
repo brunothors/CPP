@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bnespoli <bnespoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 12:20:15 by bnespoli          #+#    #+#             */
-/*   Updated: 2026/01/20 17:38:18 by bnespoli         ###   ########.fr       */
+/*   Updated: 2026/01/20 17:41:24 by bnespoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-Form::Form() : _name("Default"), _isSigned(false), _signGrade(150), _executeGrade(150) {
+AForm::AForm() : _name("Default"), _isSigned(false), _signGrade(150), _executeGrade(150) {
 	std::cout << "Form Default constructor called" << std::endl;
 }
 
-Form::~Form() {
+AForm::~AForm() {
 	std::cout << "Form Destructor called" << std::endl;
 }
 
-Form::Form(const std::string &name, const int &signGrade, const int &executeGrade)
+AForm::AForm(const std::string &name, const int &signGrade, const int &executeGrade)
 	: _name(name), _isSigned(false), _signGrade(signGrade), _executeGrade(executeGrade) {
 	if (signGrade < 1 || executeGrade < 1) {
-		throw Form::GradeTooHighException();
+		throw AForm::GradeTooHighException();
 	} else if (signGrade > 150 || executeGrade > 150) {
-		throw Form::GradeTooLowException();
+		throw AForm::GradeTooLowException();
 	std::cout << "Form " << getName() << " constructor called" << std::endl;
 	}
 }
 
-Form::Form(const Form &param)
+AForm::AForm(const AForm &param)
 	: _name(param.getName()), _isSigned(param.getIsSigned()),
 	  _signGrade(param.getSignGrade()), _executeGrade(param.getExecuteGrade()) {
-	std::cout << "Form " << getName() << " copy constructor called" << std::endl;
+	std::cout << "AForm " << getName() << " copy constructor called" << std::endl;
 }
 
-Form &Form::operator=(const Form &param) {
+AForm &AForm::operator=(const AForm &param) {
 	if (this != &param) {
 		const_cast<std::string&>(_name) = param.getName();
 		_isSigned = param.getIsSigned();
@@ -46,39 +46,43 @@ Form &Form::operator=(const Form &param) {
 	return *this;
 }
 
-const std::string	&Form::getName(void) const {
+const std::string	&AForm::getName(void) const {
 	return _name;
 }
 
-bool	Form::getIsSigned(void) const {
+bool	AForm::getIsSigned(void) const {
 	return _isSigned;
 }
 
-const int	&Form::getSignGrade(void) const {
+const int	&AForm::getSignGrade(void) const {
 	return _signGrade;
 }
 
-const int	&Form::getExecuteGrade(void) const {
+const int	&AForm::getExecuteGrade(void) const {
 	return _executeGrade;
 }
 
-void	Form::beSigned(const Bureaucrat &param) {
+void	AForm::beSigned(const Bureaucrat &param) {
 	if (param.getGrade() > getSignGrade()) {
-		throw Form::GradeTooLowException();
+		throw AForm::GradeTooLowException();
 	} else {
 		_isSigned = true;
 	}
 }
 
-const char *Form::GradeTooHighException::what() const throw() {
-	return "Form Exception: Grade Too High";
+const char *AForm::GradeTooHighException::what() const throw() {
+	return "AForm Exception: Grade Too High";
 }
 
-const char *Form::GradeTooLowException::what() const throw() {
-	return "Form Exception: Grade Too Low";
+const char *AForm::GradeTooLowException::what() const throw() {
+	return "AForm Exception: Grade Too Low";
 }
 
-std::ostream &operator<<(std::ostream &oS, const Form &param) {
+const char *AForm::FormNotSignedException::what() const throw() {
+	return "AForm Exception: Form Not Signed";
+}
+
+std::ostream &operator<<(std::ostream &oS, const AForm &param) {
 	oS << "Form: " << param.getName()
 	   << ", Signed: " << (param.getIsSigned() ? "Yes" : "No")
 	   << ", Sign Grade: " << param.getSignGrade()
