@@ -6,7 +6,7 @@
 /*   By: bnespoli <bnespoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 18:30:05 by bnespoli          #+#    #+#             */
-/*   Updated: 2026/01/20 18:51:22 by bnespoli         ###   ########.fr       */
+/*   Updated: 2026/01/20 19:09:20 by bnespoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& param)
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target) : AForm("ShrubberyCreationForm", 145, 137), _target(target) {
-	std::cout << "ShrubberyCreationForm parameterized constructor called" << std::endl;
+	std::cout << "ShrubberyCreationForm " << _target << " constructor called" << std::endl;
 }
 
 ShrubberyCreationForm&	ShrubberyCreationForm::operator=(const ShrubberyCreationForm& param) {

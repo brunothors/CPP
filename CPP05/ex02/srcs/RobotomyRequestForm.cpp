@@ -6,7 +6,7 @@
 /*   By: bnespoli <bnespoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 18:09:53 by bnespoli          #+#    #+#             */
-/*   Updated: 2026/01/20 18:26:39 by bnespoli         ###   ########.fr       */
+/*   Updated: 2026/01/20 19:09:17 by bnespoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ RobotomyRequestForm::~RobotomyRequestForm(void) {
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string& target)	: AForm("RobotomyRequestForm", 72, 45), _target(target) {
-	std::cout << "RobotomyRequestForm parameterized constructor called" << std::endl;
+	std::cout << "RobotomyRequestForm " << _target << " constructor called" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& param)	: AForm("RobotomyRequestForm", 72, 45), _target(param._target) {

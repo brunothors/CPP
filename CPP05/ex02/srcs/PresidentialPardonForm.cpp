@@ -6,7 +6,7 @@
 /*   By: bnespoli <bnespoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 17:53:34 by bnespoli          #+#    #+#             */
-/*   Updated: 2026/01/20 18:08:49 by bnespoli         ###   ########.fr       */
+/*   Updated: 2026/01/20 19:09:13 by bnespoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &par
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : AForm("PresidentialPardonForm", 25, 5), _target(target){
-	std::cout << "PresidentialPardonForm parameterized constructor called" << std::endl;
+	std::cout << "PresidentialPardonForm " << _target << " constructor called" << std::endl;
 }
 
 PresidentialPardonForm	&PresidentialPardonForm::operator=(const PresidentialPardonForm &param) {
