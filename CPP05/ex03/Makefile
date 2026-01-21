@@ -6,11 +6,11 @@
 #    By: bnespoli <bnespoli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/18 12:20:21 by bnespoli          #+#    #+#              #
-#    Updated: 2026/01/21 17:04:47 by bnespoli         ###   ########.fr        #
+#    Updated: 2026/01/21 17:04:39 by bnespoli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME:=	AForm
+NAME:=	Intern
 
 CC:=	c++ -std=c++98
 
@@ -24,7 +24,8 @@ SRC_FILES	+=	$(addprefix ./srcs/, \
 				AForm.cpp \
 				ShrubberyCreationForm.cpp \
 				RobotomyRequestForm.cpp \
-				PresidentialPardonForm.cpp)
+				PresidentialPardonForm.cpp \
+				Intern.cpp)
 OBJS_DIR	:=	./objs/
 OBJS		:=	$(patsubst ./srcs/%.cpp, $(OBJS_DIR)%.o, $(SRC_FILES))
 

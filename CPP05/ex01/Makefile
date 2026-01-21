@@ -6,17 +6,17 @@
 #    By: bnespoli <bnespoli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/18 12:20:21 by bnespoli          #+#    #+#              #
-#    Updated: 2026/01/18 12:20:22 by bnespoli         ###   ########.fr        #
+#    Updated: 2026/01/21 17:04:57 by bnespoli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME:=	Form
 
-CC:=	c++
+CC:=	c++ -std=c++98
 
 INCLUDES	:=	$(addprefix -I , includes/)
 
-CPP_FLAGS	:=	$(INCLUDES) -Wall -Werror -Wextra -std=c++98
+CPP_FLAGS	:=	$(INCLUDES) -Wall -Werror -Wextra
 
 SRC_FILES	+=	$(addprefix ./srcs/, \
 				main.cpp \
